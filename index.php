@@ -38,13 +38,14 @@ try {
         </tr>
         <?php
         $stmt = $pdo->query('SELECT * FROM series');
-        while ($row = $stmt->fetch()) { 
-            echo "<tr>";
-            echo "<td>" . $row['title'] . "</td>";
-            echo "<td>" . $row['rating'] . "</td>";
-            echo "</tr>";
-        }
-        ?>
+        while ($row = $stmt->fetch()): ?> 
+            <tr>
+            <td><?= $row['title'] ?></td> 
+            <td><?= $row['rating'] ?></td>
+            <td><form action="series.php" method="get"><a type='submit' name='id' href="series.php?id=<?= $row['id']?>">Bekijk de details</a></form></td>
+            </tr>
+        
+        <?php endwhile; ?>
     </table>
 
     <h2>Films</h2>
@@ -54,14 +55,15 @@ try {
             <th>Duur</th>
         </tr>
         <?php
-        $stmt = $pdo->query('SELECT * FROM films');
-        while ($row = $stmt->fetch()) { 
-            echo "<tr>";
-            echo "<td>" . $row['titel'] . "</td>";
-            echo "<td>" . $row['duur'] . "</td>";
-            echo "</tr>";
-        }
-        ?>
+        $stmt = $pdo->query('SELECT * FROM movies');
+        while ($row = $stmt->fetch()): ?> 
+            <tr>
+            <td><?= $row['title'] ?></td>
+            <td><?= $row['duur'] ?></td>
+            <td><form action="films.php" method="get"><a type='submit' name='id' href="films.php?id=<?= $row['id']?>">Bekijk de details</a></form></td>
+            </tr>
+        
+        <?php endwhile; ?>
     </table>
 
 </body>
