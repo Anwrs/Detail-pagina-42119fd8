@@ -1,6 +1,6 @@
 CREATE DATABASE `netland`;
 
-USE `netland`;
+USE `netland`; 
 
 CREATE TABLE `series` (
 	id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,

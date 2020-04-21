@@ -29,7 +29,7 @@ if (isset($_GET['id'])) :
     $stmt->bindParam(':id', $id);
     $stmt->execute(); 
     while ($row = $stmt->fetch()) : ?>
-        <h1><?= $row['title']?> - <?= $row['duur'] ?></h1>
+        <h1><?= $row['title']?> - <?= $row['duur'] ?> minuten</h1>
         <table>
             <tr>
                 <td><h2>Datum van uitkomst: <?= $row['datum_van_uitkomst'] ?></h2></td>
